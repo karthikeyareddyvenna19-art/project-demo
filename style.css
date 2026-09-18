@@ -1,0 +1,619 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header .logo h1 {
+    font-size: 1.5rem;
+}
+
+header .search-box {
+    display: flex;
+    gap: 0.5rem;
+}
+
+header .search-box input {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 4px;
+    width: 200px;
+}
+
+header .search-box button {
+    padding: 0.5rem 1rem;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+header .search-box button:hover {
+    background-color: #2980b9;
+}
+
+header nav {
+    display: flex;
+    gap: 1rem;
+}
+
+header nav button {
+    padding: 0.5rem 1rem;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+header nav button:hover {
+    background-color: #2980b9;
+}
+
+header nav button.active {
+    background-color: #2980b9;
+}
+
+main {
+    padding: 2rem;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+section h2 {
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+/* Sports Grid */
+.sports-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.sport-card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.sport-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.sport-card img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 0.5rem;
+}
+
+.sport-card h3 {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    color: #2c3e50;
+}
+
+/* Matches Section */
+.tabs {
+    display: flex;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 1rem;
+}
+
+.tab-btn {
+    padding: 0.75rem 1.5rem;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #666;
+    transition: all 0.2s;
+}
+
+.tab-btn:hover {
+    color: #3498db;
+}
+
+.tab-btn.active {
+    color: #3498db;
+    border-bottom: 2px solid #3498db;
+}
+
+.matches-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.match-card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.match-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.match-card.live {
+    border-left: 4px solid #e74c3c;
+}
+
+.match-card.upcoming {
+    border-left: 4px solid #f39c12;
+}
+
+.match-card.past {
+    border-left: 4px solid #95a5a6;
+}
+
+.match-card h3 {
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+}
+
+.match-card .teams {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.match-card .score {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.match-card .status {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.match-card .status.live {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+.match-card .status.upcoming {
+    background-color: #f39c12;
+    color: #fff;
+}
+
+.match-card .status.past {
+    background-color: #95a5a6;
+    color: #fff;
+}
+
+.match-card .date {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+}
+
+/* Players Section */
+.players-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.player-card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.player-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 0.5rem;
+}
+
+.player-card h3 {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+    color: #2c3e50;
+}
+
+.player-card .team {
+    color: #7f8c8d;
+    margin-bottom: 0.5rem;
+}
+
+.player-card .stats {
+    text-align: left;
+    margin-top: 1rem;
+}
+
+.player-card .stats div {
+    margin-bottom: 0.25rem;
+    font-size: 0.9rem;
+}
+
+/* Modals */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #aaa;
+}
+
+.close-btn:hover {
+    color: #000;
+}
+
+/* Match Centre Tabs */
+.match-centre-tabs {
+    display: flex;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 1.5rem;
+}
+
+.centre-tab-btn {
+    padding: 0.75rem 1.5rem;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #666;
+    transition: all 0.2s;
+}
+
+.centre-tab-btn:hover {
+    color: #3498db;
+}
+
+.centre-tab-btn.active {
+    color: #3498db;
+    border-bottom: 2px solid #3498db;
+}
+
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+/* Scoreboard */
+.scoreboard {
+    background-color: #ecf0f1;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.scoreboard .teams {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.scoreboard .team {
+    text-align: center;
+    flex: 1;
+}
+
+.scoreboard .team-name {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.scoreboard .score {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.scoreboard .overs {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #7f8c8d;
+}
+
+/* Commentary */
+.commentary-feed {
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 4px;
+    background-color: #fafafa;
+}
+
+.commentary-entry {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.commentary-entry:last-child {
+    border-bottom: none;
+}
+
+.commentary-entry .over {
+    font-weight: bold;
+    min-width: 60px;
+}
+
+.commentary-entry .text {
+    flex: 1;
+}
+
+.commentary-entry .type-tag {
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.commentary-entry .type-tag.FOUR {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+.commentary-entry .type-tag.SIX {
+    background-color: #e67e22;
+    color: #fff;
+}
+
+.commentary-entry .type-tag.WICKET {
+    background-color: #9b59b6;
+    color: #fff;
+}
+
+.commentary-entry .type-tag.GOAL {
+    background-color: #2ecc71;
+    color: #fff;
+}
+
+.commentary-entry .type-tag.RUN {
+    background-color: #3498db;
+    color: #fff;
+}
+
+/* Highlight Overs */
+.highlight-overs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.highlight-card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.highlight-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.highlight-card .over-number {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.highlight-card .summary {
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+}
+
+.highlight-card .events {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+}
+
+/* Statistics Tab */
+.match-statistics {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.stat-card {
+    background-color: #ecf0f1;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.stat-card .label {
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+}
+
+.stat-card .value {
+    font-size: 1.5rem;
+    color: #2c3e50;
+}
+
+/* Profile Modal */
+.profile-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.profile-section {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.profile-section h3 {
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 0.25rem;
+}
+
+.profile-section ul {
+    list-style: none;
+}
+
+.profile-section li {
+    margin-bottom: 0.25rem;
+}
+
+/* Footer */
+footer {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+footer div {
+    flex: 1;
+    min-width: 200px;
+}
+
+footer h3 {
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #3498db;
+    padding-bottom: 0.25rem;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer li {
+    margin-bottom: 0.5rem;
+}
+
+footer a {
+    color: #ecf0f1;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    header .search-box {
+        margin: 1rem 0;
+        width: 100%;
+    }
+    
+    header .search-box input {
+        width: 100%;
+    }
+    
+    header nav {
+        width: 100%;
+        justify-content: space-around;
+    }
+    
+    main {
+        padding: 1rem;
+    }
+    
+    .matches-container,
+    .sports-grid,
+    .players-grid,
+    .highlight-overs-grid,
+    .match-statistics,
+    .profile-info {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    header .search-box {
+        flex-direction: column;
+    }
+    
+    header .search-box input {
+        margin-bottom: 0.5rem;
+    }
+    
+    .scoreboard .teams {
+        flex-direction: column;
+    }
+}
