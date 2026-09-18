@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportZone</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>SportZone</h1>
+        </div>
+        <div class="search-box">
+            <input type="text" placeholder="Search for teams, players, matches...">
+            <button>Search</button>
+        </div>
+        <nav>
+            <button id="homeBtn">Home</button>
+            <button id="sportsBtn">Sports</button>
+            <button id="profileBtn">Profile</button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Sports Section -->
+        <section id="sportsSection" class="sports-section">
+            <h2>Select a Sport</h2>
+            <div id="sportsGrid" class="sports-grid">
+                <!-- Sports cards will be injected here by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Matches Section -->
+        <section id="matchesSection" class="matches-section">
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="live">Live</button>
+                <button class="tab-btn" data-tab="upcoming">Upcoming</button>
+                <button class="tab-btn" data-tab="past">Past</button>
+            </div>
+            <div id="matchesContainer" class="matches-container">
+                <!-- Match cards will be injected here by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Player Statistics Section -->
+        <section id="playersSection" class="players-section">
+            <h2>Player Statistics</h2>
+            <div id="playersGrid" class="players-grid">
+                <!-- Player cards will be injected here by JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Match Details Modal -->
+    <div id="matchDetailsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="match-header">
+                <!-- Match info will be injected here -->
+            </div>
+            <div class="match-centre-tabs">
+                <button class="centre-tab-btn active" data-tab="scoreboard">Scoreboard</button>
+                <button class="centre-tab-btn" data-tab="commentary">Commentary</button>
+                <button class="centre-tab-btn" data-tab="highlights">Highlight Overs</button>
+                <button class="centre-tab-btn" data-tab="statistics">Statistics</button>
+            </div>
+            <div class="centre-tab-content">
+                <!-- Content for each tab will be injected here -->
+                <div id="scoreboardTab" class="tab-pane active">
+                    <!-- Scoreboard -->
+                </div>
+                <div id="commentaryTab" class="tab-pane">
+                    <!-- Commentary -->
+                </div>
+                <div id="highlightsTab" class="tab-pane">
+                    <!-- Highlight Overs -->
+                </div>
+                <div id="statisticsTab" class="tab-pane">
+                    <!-- Match Statistics -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Profile Modal -->
+    <div id="profileModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Profile</h2>
+            <div class="profile-info">
+                <!-- Profile content will be injected here -->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div>
+            <h3>About</h3>
+            <p>SportZone - Sports Live Scores, Matches & Player Statistics</p>
+        </div>
+        <div>
+            <h3>Sports</h3>
+            <ul>
+                <li>Cricket</li>
+                <li>Football</li>
+                <li>Basketball</li>
+                <li>Tennis</li>
+                <li>Formula 1</li>
+                <li>Baseball</li>
+                <li>Hockey</li>
+                <li>Volleyball</li>
+            </ul>
+        </div>
+        <div>
+            <h3>Help</h3>
+            <p>Contact us for support</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
